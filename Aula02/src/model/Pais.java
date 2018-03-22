@@ -183,4 +183,40 @@ public class Pais {
 			}
 			return lista;
 		}
+		
+		@Override
+		public String toString() {
+			return "Cliente [id=" + id + ", nome=" + nome_pais + ", populacao=" + populacao
+					+ ", area=" + area + "]";
+		}
+
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			Pais other = (Pais) obj;
+			if (id != other.id)
+				return false;
+			if (nome_pais == null) {
+				if (other.nome_pais != null)
+					return false;
+			} else if (!nome_pais.equals(other.nome_pais))
+				return false;
+			if (area == -1) {
+				if (other.area != -1)
+					return false;
+			} else if (area != other.area)
+				return false;
+			if (populacao == -1) {
+				if (other.populacao != -1)
+					return false;
+			} else if (populacao != other.populacao)
+				return false;
+			return true;
+		}
 }
